@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="janitor.PartsMenu.ModController">
+    <children>
+        <Label layoutX="79.0" layoutY="69.0" text="Modify Part">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="modInHouse" layoutX="181.0" layoutY="72.0" mnemonicParsing="false" onAction="#onHouse" selected="true" text="In-House">
+            <font>
+                <Font size="13.0" />
+            </font>
+            <toggleGroup>
+                <ToggleGroup fx:id="AddToggle" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="modOutsourced" layoutX="325.0" layoutY="72.0" mnemonicParsing="false" onAction="#onOutsourced" text="Outsourced" toggleGroup="$AddToggle">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </RadioButton>
+        <AnchorPane layoutX="79.0" layoutY="143.0" prefHeight="308.0" prefWidth="471.0">
+            <children>
+                <Label layoutX="1.0" layoutY="4.0" text="ID">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="1.0" layoutY="40.0" text="Name">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="1.0" layoutY="73.0" text="Inv">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="1.0" layoutY="106.0" text="Price/Cost">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="1.0" layoutY="139.0" text="Max">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="partLocation" layoutX="1.0" layoutY="172.0" text="Machine ID">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="264.0" layoutY="139.0" text="Min">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="modID" disable="true" layoutX="109.0" layoutY="4.0" prefHeight="25.0" prefWidth="127.0">
+                    <font>
+                        <Font name="System Italic" size="13.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="modPartName" layoutX="109.0" layoutY="37.0" prefHeight="25.0" prefWidth="127.0" />
+                <TextField fx:id="modPartInv" layoutX="109.0" layoutY="70.0" prefHeight="25.0" prefWidth="127.0" />
+                <TextField fx:id="modPartCost" layoutX="109.0" layoutY="103.0" prefHeight="25.0" prefWidth="127.0" />
+                <TextField fx:id="modPartMax" layoutX="109.0" layoutY="136.0" prefHeight="25.0" prefWidth="127.0" />
+                <TextField fx:id="modMachineID" layoutX="109.0" layoutY="169.0" prefHeight="25.0" prefWidth="127.0" />
+                <TextField fx:id="modPartMin" layoutX="322.0" layoutY="136.0" prefHeight="25.0" prefWidth="127.0" />
+                <AnchorPane layoutX="236.0" layoutY="229.0" prefHeight="25.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="modSave" mnemonicParsing="false" onAction="#onModSave" text="Save" />
+                        <Button fx:id="modCancel" layoutX="58.0" mnemonicParsing="false" onAction="#onModCancel" text="Cancel" />
+                    </children>
+                </AnchorPane>
+            <Label fx:id="maxError" layoutX="1.0" layoutY="229.0" prefHeight="25.0" prefWidth="189.0" text="Max must be greater than Min" textFill="RED" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="invError" layoutX="-61.0" layoutY="229.0" text="Inventory Value must be between Max and Min" textFill="RED" visible="false" />
+            <Label fx:id="letterError" layoutX="-34.0" layoutY="270.0" text="Please make sure all fields are filled with either letters or numbers, depending on the data type." textFill="RED" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

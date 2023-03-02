@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="1000.0" style="-fx-background-color: #DEDEDE;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="janitor.PartsMenu.ProdModController">
+    <children>
+        <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#dedede" height="563.0" layoutX="25.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="950.0" />
+        <Label layoutX="79.0" layoutY="69.0" text="Modify Product">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <AnchorPane layoutX="79.0" layoutY="143.0" prefHeight="308.0" prefWidth="471.0">
+            <children>
+                <Label layoutX="1.0" layoutY="4.0" text="ID">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="1.0" layoutY="40.0" text="Name">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="1.0" layoutY="73.0" text="Inv">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="1.0" layoutY="106.0" text="Price">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="1.0" layoutY="139.0" text="Max">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="187.0" layoutY="139.0" text="Min">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="partID" alignment="CENTER" disable="true" layoutX="60.0" layoutY="4.0" prefHeight="25.0" prefWidth="127.0" promptText="Auto Gen-Disabled">
+                    <font>
+                        <Font name="System Italic" size="13.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="partName" layoutX="60.0" layoutY="38.0" prefHeight="25.0" prefWidth="127.0" />
+                <TextField fx:id="partInv" layoutX="60.0" layoutY="71.0" prefHeight="25.0" prefWidth="95.0" />
+                <TextField fx:id="partCost" layoutX="60.0" layoutY="104.0" prefHeight="25.0" prefWidth="95.0" />
+                <TextField fx:id="partMax" layoutX="60.0" layoutY="136.0" prefHeight="25.0" prefWidth="95.0" />
+                <TextField fx:id="partMin" layoutX="225.0" layoutY="137.0" prefHeight="25.0" prefWidth="95.0" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="760.0" layoutY="546.0" prefHeight="25.0" prefWidth="110.0">
+            <children>
+                <Button fx:id="prodAddSave" mnemonicParsing="false" onAction="#onProdAddSave" text="Save" />
+                <Button fx:id="addCancel" layoutX="80.0" mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
+            </children>
+        </AnchorPane>
+        <TableView fx:id="partsTable" layoutX="527.0" layoutY="75.0" prefHeight="177.0" prefWidth="419.0">
+            <columns>
+                <TableColumn fx:id="paPartID" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="paPartName" prefWidth="110.0" text="Part Name" />
+                <TableColumn fx:id="paiLevel" prefWidth="96.0" text="Inventory Level" />
+                <TableColumn fx:id="pappu" prefWidth="137.0" text="Price/Cost per Unit" />
+            </columns>
+        </TableView>
+        <TableView fx:id="productsTable" layoutX="527.0" layoutY="303.0" prefHeight="177.0" prefWidth="419.0">
+            <columns>
+                <TableColumn fx:id="prPartID" prefWidth="96.0" text="Part ID" />
+                <TableColumn fx:id="prPartName" prefWidth="73.0" text="Part Name" />
+                <TableColumn fx:id="priLevel" prefWidth="99.0" text="Inventory Level" />
+                <TableColumn fx:id="prppu" prefWidth="150.0" text="Price/Cost per Unit" />
+            </columns>
+        </TableView>
+        <TextField fx:id="addProdSearch" layoutX="769.0" layoutY="38.0" onAction="#onPartSearch" prefHeight="25.0" prefWidth="177.0" promptText="Search by Part ID or Name" />
+        <Button fx:id="prodAdd" layoutX="832.0" layoutY="265.0" mnemonicParsing="false" onAction="#onProdAdd" text="Add" />
+        <Button fx:id="prodAddRemove" layoutX="759.0" layoutY="504.0" mnemonicParsing="false" onAction="#onProdAddRemove" prefHeight="25.0" prefWidth="161.0" text="Remove Associated Part" />
+      <Label fx:id="maxError" layoutX="564.0" layoutY="550.0" text="Max must be greater than Min" textFill="RED" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="invError" layoutX="466.0" layoutY="550.0" text="Inventory Value must be between Max and Min" textFill="RED" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="letterError" layoutX="200.0" layoutY="550.0" text="Please make sure all fields are filled with either letters or numbers, depending on the data type." textFill="RED" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
